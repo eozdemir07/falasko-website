@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Falaşko | Modern Kahve Falı Deneyimi</title>
-  <meta name="description" content="Falaşko, kahve fincanı ve tabak fotoğraflarınla eğlence amaçlı fal yorumu sunan modern bir mobil uygulamadır.">
+  <title>Falaşko | Profesyonel Kahve Falı Uygulaması</title>
+  <meta name="description" content="Falaşko, kahve fincanı ve tabak fotoğraflarınla eğlence amaçlı fal yorumu sunan modern ve güvenli bir mobil uygulamadır.">
   <meta name="theme-color" content="#080B14">
   <style>
     :root {
       --bg: #080B14;
-      --bg-soft: #101322;
-      --card: #141426;
-      --card-2: #151522;
+      --surface: #111322;
+      --card: #151522;
       --gold: #D4AF37;
       --cream: #F5E9C7;
       --purple: #7861FF;
       --coffee: #5A3828;
       --text: #F7EFE2;
       --muted: #C7BCA7;
-      --line: rgba(212, 175, 55, 0.2);
+      --line: rgba(212, 175, 55, 0.22);
       --soft-line: rgba(245, 233, 199, 0.12);
-      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      --glass: rgba(255, 255, 255, 0.055);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
       --radius-xl: 32px;
       --radius-lg: 22px;
       --radius-md: 16px;
@@ -33,12 +33,12 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 14% 8%, rgba(120, 97, 255, 0.22), transparent 32%),
-        radial-gradient(circle at 84% 0%, rgba(212, 175, 55, 0.14), transparent 30%),
-        radial-gradient(circle at 48% 100%, rgba(90, 56, 40, 0.28), transparent 36%),
-        var(--bg);
       color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(120, 97, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 86% 4%, rgba(212, 175, 55, 0.16), transparent 28%),
+        radial-gradient(circle at 52% 96%, rgba(90, 56, 40, 0.30), transparent 36%),
+        linear-gradient(180deg, #080B14 0%, #090B15 52%, #070912 100%);
       line-height: 1.65;
       overflow-x: hidden;
     }
@@ -46,7 +46,7 @@
     a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1140px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -57,8 +57,8 @@
       z-index: 100;
       padding: 10px 14px;
       border-radius: 999px;
-      background: var(--cream);
       color: #11131B;
+      background: var(--cream);
       font-weight: 800;
     }
 
@@ -68,9 +68,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(20px);
-      background: rgba(8, 11, 20, 0.76);
       border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+      background: rgba(8, 11, 20, 0.78);
+      backdrop-filter: blur(18px);
     }
 
     .nav {
@@ -78,7 +78,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 22px;
     }
 
     .brand {
@@ -86,30 +86,30 @@
       align-items: center;
       gap: 12px;
       min-width: 0;
-      font-weight: 900;
       color: var(--cream);
+      font-weight: 900;
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       flex: 0 0 auto;
-      border-radius: 15px;
+      border-radius: 16px;
       background:
-        radial-gradient(circle at 35% 30%, #fff6d7 0 10%, transparent 11% 100%),
-        linear-gradient(145deg, var(--gold), #9b642d 58%, var(--coffee));
-      box-shadow: 0 14px 30px rgba(212, 175, 55, 0.24);
+        radial-gradient(circle at 34% 28%, #fff7dc 0 10%, transparent 11% 100%),
+        linear-gradient(145deg, var(--gold), #9d642e 58%, var(--coffee));
+      box-shadow: 0 16px 34px rgba(212, 175, 55, 0.22);
       position: relative;
     }
 
     .logo::before {
       content: "";
       position: absolute;
-      width: 22px;
-      height: 12px;
       left: 10px;
       top: 20px;
-      border: 2px solid rgba(8, 11, 20, 0.76);
+      width: 23px;
+      height: 13px;
+      border: 2px solid rgba(8, 11, 20, 0.78);
       border-top: 0;
       border-radius: 0 0 18px 18px;
     }
@@ -117,13 +117,13 @@
     .logo::after {
       content: "";
       position: absolute;
-      width: 10px;
-      height: 9px;
       right: 7px;
       top: 19px;
+      width: 10px;
+      height: 10px;
       border: 2px solid rgba(8, 11, 20, 0.58);
       border-left: 0;
-      border-radius: 0 9px 9px 0;
+      border-radius: 0 10px 10px 0;
     }
 
     .brand-name { font-size: 21px; letter-spacing: 0; }
@@ -132,17 +132,21 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 20px;
+      gap: 18px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 700;
     }
 
-    .nav-links a { white-space: nowrap; }
+    .nav-links a {
+      white-space: nowrap;
+      transition: color 0.18s ease, border-color 0.18s ease;
+    }
+
     .nav-links a:hover { color: var(--cream); }
 
     .nav-cta {
-      padding: 10px 15px;
+      padding: 10px 14px;
       border: 1px solid var(--line);
       border-radius: 999px;
       color: var(--cream);
@@ -151,16 +155,33 @@
 
     main { display: block; }
 
+    section { padding: 78px 0; }
+
+    h1, h2, h3, p { overflow-wrap: anywhere; }
+
     .hero {
-      padding: 86px 0 70px;
+      padding: 90px 0 78px;
       position: relative;
     }
 
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 22px auto auto 50%;
+      width: min(620px, 70vw);
+      height: min(620px, 70vw);
+      transform: translateX(-10%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(120, 97, 255, 0.12), transparent 62%);
+      pointer-events: none;
+    }
+
     .hero-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
       align-items: center;
-      gap: 54px;
+      gap: 58px;
     }
 
     .eyebrow {
@@ -168,13 +189,13 @@
       align-items: center;
       gap: 9px;
       padding: 9px 14px;
-      border-radius: 999px;
+      margin-bottom: 24px;
       border: 1px solid var(--line);
-      background: rgba(212, 175, 55, 0.08);
+      border-radius: 999px;
       color: var(--cream);
+      background: rgba(212, 175, 55, 0.08);
       font-size: 14px;
       font-weight: 800;
-      margin-bottom: 24px;
     }
 
     .dot {
@@ -185,23 +206,22 @@
       box-shadow: 0 0 18px rgba(212, 175, 55, 0.8);
     }
 
-    h1, h2, h3, p { overflow-wrap: anywhere; }
-
     h1 {
       margin: 0;
+      max-width: 760px;
+      color: var(--text);
       font-size: clamp(40px, 6vw, 76px);
       line-height: 1.02;
       letter-spacing: 0;
-      color: var(--text);
     }
 
     h1 span { color: var(--gold); }
 
     .hero-copy {
       max-width: 660px;
+      margin: 26px 0 0;
       color: var(--muted);
       font-size: 19px;
-      margin: 26px 0 0;
     }
 
     .hero-actions {
@@ -217,152 +237,227 @@
       justify-content: center;
       min-height: 50px;
       padding: 13px 20px;
+      border: 1px solid transparent;
       border-radius: 999px;
       font-weight: 800;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
     .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #C67C35);
       color: #121015;
+      background: linear-gradient(135deg, var(--gold), #C67C35);
       box-shadow: 0 18px 34px rgba(212, 175, 55, 0.22);
     }
 
     .btn-secondary {
-      border-color: var(--line);
       color: var(--cream);
+      border-color: var(--line);
       background: rgba(255, 255, 255, 0.04);
     }
 
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 700px;
+      margin-top: 28px;
+    }
+
+    .trust-badge {
+      min-height: 92px;
+      padding: 14px;
+      border: 1px solid rgba(245, 233, 199, 0.12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .trust-badge strong {
+      display: block;
+      color: var(--cream);
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .trust-badge span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
     .hero-note {
-      margin-top: 18px;
       max-width: 660px;
+      margin-top: 18px;
       color: #B7AA93;
       font-size: 14px;
     }
 
-    .phone-card {
-      position: relative;
-      width: min(380px, 100%);
+    .phone-shell {
+      width: min(390px, 100%);
       margin-left: auto;
-      border-radius: 46px;
       padding: 14px;
-      background: linear-gradient(145deg, rgba(245, 233, 199, 0.22), rgba(120, 97, 255, 0.18));
-      box-shadow: var(--shadow);
+      border-radius: 48px;
+      background:
+        linear-gradient(145deg, rgba(245, 233, 199, 0.24), rgba(120, 97, 255, 0.18)),
+        rgba(255,255,255,0.04);
+      box-shadow: var(--shadow), 0 0 70px rgba(120, 97, 255, 0.18);
+      position: relative;
+    }
+
+    .phone-shell::before {
+      content: "";
+      position: absolute;
+      inset: 34px -22px auto auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.12);
+      filter: blur(18px);
     }
 
     .phone {
-      min-height: 620px;
-      border-radius: 36px;
-      background:
-        radial-gradient(circle at 50% 18%, rgba(212, 175, 55, 0.22), transparent 30%),
-        radial-gradient(circle at 20% 80%, rgba(120, 97, 255, 0.16), transparent 28%),
-        linear-gradient(180deg, #121423, #090B13);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      padding: 24px;
+      min-height: 640px;
+      border-radius: 38px;
+      padding: 22px;
       overflow: hidden;
       position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(212, 175, 55, 0.22), transparent 30%),
+        radial-gradient(circle at 18% 80%, rgba(120, 97, 255, 0.16), transparent 28%),
+        linear-gradient(180deg, rgba(18, 20, 35, 0.98), rgba(9, 11, 19, 0.98));
+    }
+
+    .phone::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.12), transparent 30%, transparent 70%, rgba(255,255,255,0.05));
+      pointer-events: none;
     }
 
     .phone-speaker {
-      width: 74px;
+      width: 78px;
       height: 6px;
-      margin: 0 auto 24px;
-      border-radius: 99px;
+      margin: 0 auto 22px;
+      border-radius: 999px;
       background: rgba(245, 233, 199, 0.18);
     }
 
     .phone-top {
+      position: relative;
+      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
       color: var(--cream);
       font-size: 13px;
-      margin-bottom: 28px;
-      gap: 12px;
+      margin-bottom: 18px;
     }
 
-    .phone-status {
-      padding: 5px 9px;
+    .status-pill {
+      padding: 6px 10px;
+      border: 1px solid rgba(212, 175, 55, 0.18);
       border-radius: 999px;
       color: var(--gold);
-      background: rgba(212, 175, 55, 0.1);
-      border: 1px solid rgba(212, 175, 55, 0.16);
+      background: rgba(212, 175, 55, 0.10);
       white-space: nowrap;
     }
 
+    .preview-card {
+      position: relative;
+      z-index: 1;
+      padding: 16px;
+      border: 1px solid rgba(245, 233, 199, 0.12);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.06);
+      margin-bottom: 14px;
+    }
+
+    .cup-wrap {
+      width: 220px;
+      height: 220px;
+      margin: 14px auto 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.16), transparent 68%);
+    }
+
     .cup {
-      width: 210px;
-      height: 210px;
-      margin: 0 auto 28px;
+      width: 184px;
+      height: 184px;
       border-radius: 50%;
       background:
-        radial-gradient(circle at center, #1A0F0B 0 28%, #F5E9C7 29% 34%, #4A2A1D 35% 48%, #F5E9C7 49% 55%, #151522 56%);
-      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.45), 0 22px 60px rgba(0, 0, 0, 0.38);
+        radial-gradient(circle at 48% 48%, #1A0F0B 0 28%, #F5E9C7 29% 34%, #4A2A1D 35% 48%, #F5E9C7 49% 55%, #151522 56%);
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.48), 0 22px 58px rgba(0,0,0,0.40);
       position: relative;
+    }
+
+    .cup::before {
+      content: "";
+      position: absolute;
+      left: 54px;
+      top: 56px;
+      width: 52px;
+      height: 38px;
+      border-radius: 48% 52% 42% 58%;
+      border: 2px solid rgba(212, 175, 55, 0.42);
+      transform: rotate(-22deg);
     }
 
     .cup::after {
       content: "";
       position: absolute;
-      width: 66px;
-      height: 28px;
-      border: 8px solid rgba(245, 233, 199, 0.72);
+      right: -34px;
+      top: 75px;
+      width: 56px;
+      height: 25px;
+      border: 7px solid rgba(245, 233, 199, 0.72);
       border-left: 0;
-      border-radius: 0 30px 30px 0;
-      right: -42px;
-      top: 88px;
-      opacity: 0.7;
+      border-radius: 0 28px 28px 0;
     }
 
-    .app-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(245, 233, 199, 0.12);
-      border-radius: 26px;
-      padding: 18px;
-      margin-bottom: 14px;
-    }
-
-    .app-card h3 {
+    .preview-card h3 {
       margin: 0 0 6px;
       color: var(--cream);
       font-size: 18px;
     }
 
-    .app-card p {
+    .preview-card p {
       margin: 0;
-      font-size: 14px;
       color: var(--muted);
+      font-size: 14px;
     }
 
-    .mini-row {
+    .phone-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
 
-    .mini {
-      min-height: 74px;
-      border-radius: 20px;
-      background: rgba(212, 175, 55, 0.09);
-      border: 1px solid rgba(212, 175, 55, 0.13);
+    .phone-item {
+      min-height: 72px;
       padding: 12px;
-      color: var(--cream);
-      font-size: 13px;
-      font-weight: 800;
       display: flex;
       align-items: flex-end;
+      border: 1px solid rgba(212, 175, 55, 0.14);
+      border-radius: 20px;
+      color: var(--cream);
+      background: rgba(212, 175, 55, 0.09);
+      font-size: 13px;
+      font-weight: 800;
     }
 
-    section { padding: 72px 0; }
-
     .section-title {
-      text-align: center;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 42px;
+      text-align: center;
     }
 
     .section-title h2 {
@@ -385,25 +480,25 @@
     }
 
     .feature {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      min-height: 206px;
+      padding: 22px;
       border: 1px solid rgba(212, 175, 55, 0.14);
       border-radius: var(--radius-lg);
-      padding: 22px;
-      min-height: 205px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.026));
     }
 
     .icon {
       width: 46px;
       height: 46px;
-      border-radius: 16px;
+      margin-bottom: 18px;
       display: grid;
       place-items: center;
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid rgba(212, 175, 55, 0.20);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      border-radius: 16px;
       color: var(--gold);
-      font-size: 17px;
+      background: rgba(212, 175, 55, 0.12);
+      font-size: 16px;
       font-weight: 900;
-      margin-bottom: 18px;
     }
 
     .feature h3 {
@@ -426,11 +521,10 @@
     }
 
     .step {
-      position: relative;
       padding: 24px;
+      border: 1px solid var(--soft-line);
       border-radius: var(--radius-lg);
       background: rgba(21, 21, 34, 0.84);
-      border: 1px solid var(--soft-line);
       counter-increment: step;
     }
 
@@ -440,11 +534,11 @@
       place-items: center;
       width: 38px;
       height: 38px;
-      border-radius: 50%;
-      background: var(--gold);
-      color: #151018;
-      font-weight: 900;
       margin-bottom: 18px;
+      border-radius: 50%;
+      color: #151018;
+      background: var(--gold);
+      font-weight: 900;
     }
 
     .step h3 {
@@ -459,40 +553,66 @@
       font-size: 14px;
     }
 
-    .notice-section {
+    .safety-panel {
+      padding: 38px;
+      border: 1px solid rgba(212, 175, 55, 0.22);
       border-radius: var(--radius-xl);
       background:
-        radial-gradient(circle at 20% 0%, rgba(120, 97, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 18% 0%, rgba(120, 97, 255, 0.22), transparent 30%),
         linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(255,255,255,0.04));
-      border: 1px solid rgba(212, 175, 55, 0.22);
-      padding: 38px;
+    }
+
+    .safety-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+      gap: 28px;
+      align-items: start;
     }
 
-    .notice-section h2 {
-      margin: 0 0 10px;
-      font-size: clamp(26px, 3vw, 34px);
-      line-height: 1.18;
+    .safety-panel h2 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.14;
     }
 
-    .notice-section p {
+    .safety-panel p {
       margin: 0;
       color: var(--muted);
     }
 
-    .plus-card {
-      max-width: 880px;
-      margin: 0 auto;
-      border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at 80% 10%, rgba(120, 97, 255, 0.2), transparent 30%),
-        linear-gradient(180deg, rgba(20, 20, 38, 0.96), rgba(15, 17, 29, 0.96));
+    .safety-cards {
+      display: grid;
+      gap: 12px;
+    }
+
+    .safety-card {
+      padding: 16px;
       border: 1px solid rgba(245, 233, 199, 0.12);
-      padding: 34px;
+      border-radius: 18px;
+      background: rgba(8, 11, 20, 0.34);
+    }
+
+    .safety-card strong {
+      display: block;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .safety-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .plus-card {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px;
+      border: 1px solid rgba(245, 233, 199, 0.12);
+      border-radius: var(--radius-xl);
       text-align: center;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(120, 97, 255, 0.20), transparent 30%),
+        linear-gradient(180deg, rgba(20, 20, 38, 0.96), rgba(15, 17, 29, 0.96));
     }
 
     .plus-card h2 {
@@ -502,27 +622,71 @@
     }
 
     .plus-card p {
+      max-width: 740px;
       margin: 16px auto 0;
-      max-width: 720px;
       color: var(--muted);
       font-size: 17px;
     }
 
+    .faq-list {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border: 1px solid rgba(245, 233, 199, 0.12);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.045);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 18px 20px;
+      color: var(--cream);
+      font-weight: 900;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      float: right;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    details[open] summary::after { content: "-"; }
+
+    details p {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
     footer {
-      padding: 44px 0;
+      padding: 46px 0;
       border-top: 1px solid rgba(212, 175, 55, 0.12);
       color: var(--muted);
     }
 
     .footer-grid {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto auto;
       gap: 24px;
-      flex-wrap: wrap;
+      align-items: start;
     }
 
-    .footer strong { color: var(--cream); }
-    .footer-links { display: grid; gap: 6px; }
+    footer strong { color: var(--cream); }
+
+    .footer-links {
+      display: grid;
+      gap: 6px;
+    }
+
     footer a { color: var(--cream); }
     footer a:hover { color: var(--gold); }
 
@@ -530,45 +694,84 @@
       .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .phone-card { margin: 0 auto; }
-      .steps { grid-template-columns: 1fr 1fr; }
-      .notice-section { grid-template-columns: 1fr; }
-      .notice-section .btn { width: fit-content; }
+    @media (max-width: 920px) {
+      .hero-grid,
+      .safety-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-shell { margin: 0 auto; }
+      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    @media (max-width: 720px) {
-      .container { width: min(100% - 28px, 1120px); }
-      .nav { align-items: flex-start; padding: 14px 0; }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, 1140px); }
+
+      .nav {
+        display: grid;
+        align-items: start;
+        padding: 14px 0;
+      }
+
       .nav-links {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px 12px;
         font-size: 13px;
       }
-      .nav-cta { padding: 0; border: 0; background: transparent; }
-      .hero { padding: 48px 0 44px; }
+
+      .nav-cta {
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .hero { padding: 50px 0 46px; }
       .hero-copy { font-size: 17px; }
       .hero-actions .btn { width: 100%; }
-      .features, .steps { grid-template-columns: 1fr; }
-      .phone { min-height: 560px; padding: 20px; }
-      .cup { width: 176px; height: 176px; }
-      .cup::after { top: 73px; right: -36px; transform: scale(0.86); }
-      .notice-section, .plus-card { padding: 26px; }
-      .notice-section .btn { width: 100%; }
-      .footer-grid { display: grid; }
+
+      .trust-badges,
+      .features,
+      .steps,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        min-height: 560px;
+        padding: 20px;
+      }
+
+      .cup-wrap {
+        width: 190px;
+        height: 190px;
+      }
+
+      .cup {
+        width: 160px;
+        height: 160px;
+      }
+
+      .cup::after {
+        top: 65px;
+        right: -31px;
+        transform: scale(0.84);
+      }
+
+      section { padding: 58px 0; }
+      .safety-panel, .plus-card { padding: 26px; }
     }
 
     @media (max-width: 430px) {
-      .brand-name { font-size: 18px; }
-      .nav { display: grid; }
-      .nav-links { grid-template-columns: 1fr; }
       h1 { font-size: 36px; }
-      .phone-card { border-radius: 34px; padding: 10px; }
-      .phone { border-radius: 28px; min-height: 530px; }
-      .mini-row { gap: 10px; }
-      .mini { min-height: 66px; }
+      .brand-name { font-size: 18px; }
+      .nav-links { grid-template-columns: 1fr; }
+      .phone-shell { border-radius: 34px; padding: 10px; }
+      .phone { border-radius: 28px; min-height: 540px; }
+      .phone-grid { gap: 10px; }
+      .phone-item { min-height: 66px; }
     }
   </style>
 </head>
@@ -586,6 +789,7 @@
         <a href="#ozellikler">Özellikler</a>
         <a href="#nasil-calisir">Nasıl Çalışır?</a>
         <a href="#guvenli-kullanim">Güvenli Kullanım</a>
+        <a href="#sss">SSS</a>
         <a class="nav-cta" href="https://eozdemir07.github.io/falasko-privacy-policy/" rel="noopener">Gizlilik Politikası</a>
       </nav>
     </div>
@@ -595,7 +799,7 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Modern kahve falı deneyimi</div>
+          <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Premium kahve falı markası</div>
           <h1>Fincanındaki izleri <span>Falaşko</span> yorumlasın.</h1>
           <p class="hero-copy">Falaşko, kahve fincanı ve tabak fotoğraflarınla eğlence amaçlı fal yorumu sunan modern bir mobil uygulamadır.</p>
 
@@ -604,29 +808,46 @@
             <a class="btn btn-secondary" href="https://eozdemir07.github.io/falasko-privacy-policy/" rel="noopener">Gizlilik Politikası</a>
           </div>
 
+          <div class="trust-badges" aria-label="Güven notları">
+            <div class="trust-badge">
+              <strong>Eğlence amaçlıdır</strong>
+              <span>Fal yorumları profesyonel tavsiye yerine geçmez.</span>
+            </div>
+            <div class="trust-badge">
+              <strong>4 fotoğraf akışı</strong>
+              <span>Fincan ve tabak görselleri düzenli bir akışla yüklenir.</span>
+            </div>
+            <div class="trust-badge">
+              <strong>Yorum bildirimi</strong>
+              <span>Rahatsız edici yorumlar uygulama içinden bildirilebilir.</span>
+            </div>
+          </div>
+
           <p class="hero-note">Fal yorumları eğlence amaçlıdır. Sağlık, hukuk, finans veya benzeri konularda profesyonel tavsiye yerine geçmez.</p>
         </div>
 
-        <aside class="phone-card" aria-label="Falaşko uygulama önizlemesi">
+        <aside class="phone-shell" aria-label="Falaşko uygulama önizlemesi">
           <div class="phone">
             <div class="phone-speaker" aria-hidden="true"></div>
             <div class="phone-top">
               <strong>Falaşko</strong>
-              <span class="phone-status">Falın hazırlanıyor</span>
+              <span class="status-pill">Falın hazırlanıyor</span>
             </div>
 
-            <div class="cup" aria-hidden="true"></div>
+            <div class="cup-wrap" aria-hidden="true">
+              <div class="cup"></div>
+            </div>
 
-            <div class="app-card">
+            <div class="preview-card">
               <h3>4 fotoğrafla fal deneyimi</h3>
               <p>Üst görünüm, sağ açı, sol açı ve tabak fotoğrafınla fincanındaki izleri düzenli şekilde aktar.</p>
             </div>
 
-            <div class="mini-row" aria-label="Uygulama özellikleri">
-              <div class="mini">Geçmiş fallar</div>
-              <div class="mini">Favoriler</div>
-              <div class="mini">Bildirimler</div>
-              <div class="mini">Koyu tema</div>
+            <div class="phone-grid" aria-label="Uygulama özellikleri">
+              <div class="phone-item">Fal arşivi</div>
+              <div class="phone-item">Favoriler</div>
+              <div class="phone-item">Bildirimler</div>
+              <div class="phone-item">Koyu tema</div>
             </div>
           </div>
         </aside>
@@ -636,8 +857,8 @@
     <section id="ozellikler" aria-labelledby="ozellikler-baslik">
       <div class="container">
         <div class="section-title">
-          <h2 id="ozellikler-baslik">Kahve falı odağını koruyan sade deneyim</h2>
-          <p>Falaşko, fal akışını anlaşılır tutan ve kullanıcı güvenliğini önceleyen bir mobil uygulama deneyimi olarak tasarlandı.</p>
+          <h2 id="ozellikler-baslik">Modern kahve falı deneyimi için tasarlandı</h2>
+          <p>Falaşko; sade akış, güvenli dil ve mobil odaklı arayüzle kahve falı deneyimini anlaşılır tutar.</p>
         </div>
 
         <div class="features">
@@ -646,46 +867,39 @@
             <h3>Kahve falı odağı</h3>
             <p>Kahve fincanı ve tabak fotoğrafları üzerinden eğlence amaçlı yorum deneyimi sunar.</p>
           </article>
-
           <article class="feature">
             <div class="icon" aria-hidden="true">4F</div>
             <h3>4 fotoğraf akışı</h3>
-            <p>Üst görünüm, sağ açı, sol açı ve tabak fotoğrafı ile fincan detaylarını düzenli aktarabilirsin.</p>
+            <p>Üst görünüm, sağ açı, sol açı ve tabak görseliyle fincan detaylarını düzenli aktarabilirsin.</p>
           </article>
-
           <article class="feature">
             <div class="icon" aria-hidden="true">BH</div>
             <h3>Fal hazır bildirimi</h3>
-            <p>Falın hazır olduğunda bildirim alabilir ve ilgili fal sonucuna güvenli şekilde dönebilirsin.</p>
+            <p>Falın hazır olduğunda bildirim alabilir ve ilgili fal sonucuna dönebilirsin.</p>
           </article>
-
           <article class="feature">
             <div class="icon" aria-hidden="true">AR</div>
             <h3>Fal arşivi</h3>
-            <p>Geçmiş fal yorumlarına uygulama içinden tekrar ulaşabilirsin.</p>
+            <p>Geçmiş fal yorumlarına uygulama içinden yeniden ulaşabilirsin.</p>
           </article>
-
           <article class="feature">
             <div class="icon" aria-hidden="true">FV</div>
             <h3>Favoriler</h3>
-            <p>Beğendiğin yorumları favorilerine ekleyebilir ve daha sonra yeniden okuyabilirsin.</p>
+            <p>Beğendiğin yorumları favorilerine ekleyebilir ve daha sonra tekrar okuyabilirsin.</p>
           </article>
-
           <article class="feature">
             <div class="icon" aria-hidden="true">TM</div>
             <h3>Açık / koyu tema</h3>
             <p>Uygulamayı açık, koyu veya cihazının sistem temasına uyumlu şekilde kullanabilirsin.</p>
           </article>
-
           <article class="feature">
-            <div class="icon" aria-hidden="true">GB</div>
-            <h3>Güvenli bildirim sistemi</h3>
-            <p>Bildirim tercihlerini uygulama içinden yönetebilir, sessiz mod seçeneğini kullanabilirsin.</p>
+            <div class="icon" aria-hidden="true">GP</div>
+            <h3>Güvenli paylaşım</h3>
+            <p>Paylaşım ekranı, kullanıcının kendi seçtiği uygulama üzerinden işlem yapmasına dayanır.</p>
           </article>
-
           <article class="feature">
-            <div class="icon" aria-hidden="true">RB</div>
-            <h3>Yorumu bildir</h3>
+            <div class="icon" aria-hidden="true">YB</div>
+            <h3>Yorum bildirme</h3>
             <p>Rahatsız edici bulduğun yorumları uygulama içinden bildirebilirsin.</p>
           </article>
         </div>
@@ -704,17 +918,14 @@
             <h3>Fincanını hazırla</h3>
             <p>Kahveni içtikten sonra fincan ve tabak fotoğraflarını hazırla.</p>
           </article>
-
           <article class="step">
             <h3>4 fotoğraf yükle</h3>
             <p>Üst görünüm, sağ açı, sol açı ve tabak görselini uygulamaya ekle.</p>
           </article>
-
           <article class="step">
             <h3>Yorumun hazırlansın</h3>
             <p>Falaşko, telvedeki izleri eğlence amaçlı bir yorum haline getirir.</p>
           </article>
-
           <article class="step">
             <h3>Sonucunu keşfet</h3>
             <p>Fal sonucunu okuyabilir, favorilere ekleyebilir veya paylaşım ekranını kullanabilirsin.</p>
@@ -725,12 +936,28 @@
 
     <section id="guvenli-kullanim" aria-labelledby="guven-baslik">
       <div class="container">
-        <div class="notice-section">
-          <div>
-            <h2 id="guven-baslik">Güvenli ve eğlence amaçlı kullanım</h2>
-            <p>Falaşko’da yer alan yorumlar eğlence amaçlıdır. Uygulama sağlık, hukuk, finans, yatırım, ilişki veya benzeri konularda profesyonel tavsiye sunmaz. Rahatsız edici bulduğun yorumları uygulama içinden bildirebilirsin.</p>
+        <div class="safety-panel">
+          <div class="safety-grid">
+            <div>
+              <h2 id="guven-baslik">Güvenli ve eğlence amaçlı kullanım</h2>
+              <p>Falaşko’da yer alan yorumlar eğlence amaçlıdır. Uygulama sağlık, hukuk, finans, yatırım, ilişki veya benzeri konularda profesyonel tavsiye sunmaz. Rahatsız edici bulduğun yorumları uygulama içinden bildirebilirsin.</p>
+            </div>
+
+            <div class="safety-cards" aria-label="Güvenli kullanım notları">
+              <div class="safety-card">
+                <strong>Profesyonel tavsiye değildir</strong>
+                <span>Yorumlar eğlence odaklıdır ve önemli kararlar için tek kaynak olarak kullanılmamalıdır.</span>
+              </div>
+              <div class="safety-card">
+                <strong>Kullanıcı kontrolü</strong>
+                <span>Fotoğraf, bildirim ve paylaşım tercihleri kullanıcının seçimiyle ilerler.</span>
+              </div>
+              <div class="safety-card">
+                <strong>İçerik bildirimi</strong>
+                <span>Rahatsız edici yorumlar uygulama içinden bildirilebilir.</span>
+              </div>
+            </div>
           </div>
-          <a class="btn btn-primary" href="https://eozdemir07.github.io/falasko-privacy-policy/" rel="noopener">Gizlilik Politikası</a>
         </div>
       </div>
     </section>
@@ -740,6 +967,38 @@
         <div class="plus-card">
           <h2 id="plus-baslik">Falaşko Plus yakında</h2>
           <p>Daha detaylı yorumlar, özel paylaşım şablonları ve gelişmiş arşiv özellikleri ilerleyen sürümlerde Falaşko Plus ile gelebilir. Mevcut sürümde bu sayfa üzerinden ödeme alınmaz.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sss" aria-labelledby="sss-baslik">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="sss-baslik">Sık sorulan sorular</h2>
+          <p>Falaşko’nun amacı, izinleri ve güvenli kullanım yaklaşımı hakkında kısa cevaplar.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Falaşko ne işe yarar?</summary>
+            <p>Kahve fincanı ve tabak fotoğraflarıyla eğlence amaçlı fal yorumu sunar.</p>
+          </details>
+          <details>
+            <summary>Fal yorumları gerçek hayat kararları için kullanılmalı mı?</summary>
+            <p>Hayır. Yorumlar eğlence amaçlıdır; sağlık, hukuk, finans, yatırım veya ilişki konularında profesyonel tavsiye değildir.</p>
+          </details>
+          <details>
+            <summary>Uygulama fotoğrafları neden ister?</summary>
+            <p>Kahve falı yorum deneyimini oluşturmak için fincan ve tabak fotoğraflarına ihtiyaç duyar.</p>
+          </details>
+          <details>
+            <summary>Rahatsız edici bir yorum görürsem ne yapabilirim?</summary>
+            <p>Uygulama içindeki “Bu yorumu bildir” alanını kullanabilirsin.</p>
+          </details>
+          <details>
+            <summary>Falaşko Plus aktif mi?</summary>
+            <p>Hayır. Plus özellikleri ilerleyen sürümlerde gelebilir. Mevcut sürümde bu sayfa üzerinden ödeme alınmaz.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -754,7 +1013,7 @@
 
       <div class="footer-links">
         <a href="https://eozdemir07.github.io/falasko-privacy-policy/" rel="noopener">Gizlilik Politikası</a>
-        <a href="mailto:destek@falasko.app">destek@falasko.app</a>
+        <a href="mailto:destek@falasko.app">Destek: destek@falasko.app</a>
       </div>
 
       <div>© 2026 Falaşko. Tüm hakları saklıdır.</div>
